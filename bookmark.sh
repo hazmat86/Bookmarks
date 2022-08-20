@@ -17,12 +17,12 @@
 target=$1
 bookmarks="$HOME/.config/google-chrome/Default/Bookmarks"
 
-grep -i $target $bookmarks > file.txt
+grep -i $target $bookmarks > /home/hazmat/bashScripts/file.txt
 
 loc="$HOME/bashScripts/file.txt"
 file=$(cat $loc)
 
 echo $file | tr -d " " | tr -d "\"" | sed 's/url:/\n/g' | sed 's/name:/\n/g' | grep http 
 
-rm ./file.txt
+rm /home/hazmat/bashScripts/file.txt
 
